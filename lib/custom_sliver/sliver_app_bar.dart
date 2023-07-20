@@ -38,15 +38,15 @@ class _CustomScrollViewExampleState extends State<CustomScrollViewExample> {
             expandedHeight: 200.0,
             flexibleSpace: FlexibleSpaceBar(
               background: Image.network(
-                "https://img.freepik.com/free-photo/blue-black-muscle-car-with-license-plate-that-says-trans-front_1340-23399.jpg",fit: BoxFit.fill,),
+                "https://img.freepik.com/free-photo/blue-black-muscle-car-with-license-plate-that-says-trans-front_1340-23399.jpg",
+                fit: BoxFit.fill,
+              ),
               title: const Text('Demo'),
             ),
           ),
-
-          SliverToBoxAdapter(
+         const SliverToBoxAdapter(
             child: SizedBox(height: 20),
           ),
-
           SliverGrid(
             gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
               maxCrossAxisExtent: 200.0,
@@ -55,7 +55,7 @@ class _CustomScrollViewExampleState extends State<CustomScrollViewExample> {
               childAspectRatio: 4.0,
             ),
             delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) {
+              (BuildContext context, int index) {
                 return Container(
                   alignment: Alignment.center,
                   color: Colors.teal[100 * (index % 9)],
@@ -68,7 +68,7 @@ class _CustomScrollViewExampleState extends State<CustomScrollViewExample> {
           SliverFixedExtentList(
             itemExtent: 60.0,
             delegate: SliverChildBuilderDelegate(
-                  (BuildContext context, int index) {
+              (BuildContext context, int index) {
                 return Container(
                   alignment: Alignment.center,
                   color: Colors.lightBlue[100 * (index % 9)],

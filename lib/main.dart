@@ -1,10 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:hive/hive.dart';
+import 'package:hive_flutter/adapters.dart';
+import 'package:my_default_progect/data/hive_service/hive_service.dart';
 
-void main () async{
 
+// import 'data/hive_service/hive_service.dart';
+import 'data/local/shared-preferences.dart';
 
-  runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+StorageRepository.getInstance();
+
+  Hive.initFlutter;
+  HiveService.openBox();
+  // Hive.registerAdapter(ListModelAdapter());
+  runApp(const MyApp());
+
 }
+
 
 
 

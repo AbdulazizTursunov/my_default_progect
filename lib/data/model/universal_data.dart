@@ -1,6 +1,4 @@
-
-
-class UniversalData{
+class UniversalData {
   dynamic data;
   String error;
   int statusCode;
