@@ -57,10 +57,10 @@ class _LoadingHomeworkState extends State<LoadingHomework>
           ),
           AnimatedContainer(
             duration: Duration(seconds: 1),
-            height: 80,
-            width: 80,
+            height: 120,
+            width: 120,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(50),
+              borderRadius: BorderRadius.circular(70),
               color: colors,
             ),
           ),
@@ -73,7 +73,10 @@ class _LoadingHomeworkState extends State<LoadingHomework>
               value: animationController.value,
             ),
           ),
-          Text("${(animationController.value * 100).round()} % "),
+          Text(
+            "${(animationController.value * 100).round()} % ",
+            style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+          ),
           ElevatedButton(
               onPressed: () {
                 setState(() {
@@ -81,7 +84,10 @@ class _LoadingHomeworkState extends State<LoadingHomework>
                   _loading();
                 });
               },
-              child: Text("pressed")),
+              child: Text(
+                "pressed",
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 20),
+              )),
         ],
       ),
     );
