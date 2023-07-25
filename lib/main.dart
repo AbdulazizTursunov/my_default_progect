@@ -32,52 +32,54 @@ class _MyAppState extends State<MyApp> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: ChangeNotifierProvider<PassagirProvider>(
-        create: (context)=> PassagirProvider(),
-        child: ScreenPassagir(),
-      ),
+      home:
+        Scaffold(
+        appBar: AppBar(
+          title: const Text("pages"),
+        ),
+        body:
 
-      // Scaffold(
-      //   appBar: AppBar(
-      //     title: const Text("pages"),
-      //   ),
-      //   body:
-      //
-      //   ListView.builder(
-      //       physics: const BouncingScrollPhysics(),
-      //       itemCount: pages.length,
-      //       itemBuilder: (context, int index) {
-      //         var page = pages[index];
-      //         return Container(
-      //           margin: EdgeInsets.all(10),
-      //           height: 100,
-      //           decoration: BoxDecoration(
-      //               borderRadius: BorderRadius.circular(10),
-      //               color: Colors.lightBlue),
-      //           child: Center(
-      //             child: ListTile(
-      //               onTap: () {
-      //                 Navigator.push(
-      //                     context,
-      //                     MaterialPageRoute(
-      //                       builder: (context) => page,
-      //                     ));
-      //               },
-      //               title: Text(
-      //                 "$page ",
-      //                 style:
-      //                     TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-      //               ),
-      //               trailing: Text(
-      //                 "  ${index + 1}",
-      //                 style:
-      //                     TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
-      //               ),
-      //             ),
-      //           ),
-      //         );
-      //       }),
+        ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            itemCount: pages.length,
+            itemBuilder: (context, int index) {
+              var page = pages[index];
+              return Container(
+                margin: EdgeInsets.all(10),
+                height: 100,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.lightBlue),
+                child: Center(
+                  child: ListTile(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => page,
+                          ));
+                    },
+                    title: Text(
+                      "$page ",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    ),
+                    trailing: Text(
+                      "  ${index + 1}",
+                      style:
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                    ),
+                  ),
+                ),
+              );
+            }),
+      ),
+      // ChangeNotifierProvider<PassagirProvider>(
+      //   create: (context)=> PassagirProvider(),
+      //   child: ScreenPassagir(),
       // ),
+
+
     );
   }
 }
