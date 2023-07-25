@@ -45,12 +45,12 @@ class _PageScreenState extends State<PageScreen> {
   @override
   void initState() {
     _fetchResult();
-    // scrollController.addListener(() {
-    //   if (scrollController.position.pixels ==
-    //       scrollController.position.maxScrollExtent) {
-    //     _fetchResult();
-    //   }
-    // });
+    scrollController.addListener(() {
+      if (scrollController.position.pixels ==
+          scrollController.position.maxScrollExtent) {
+        _fetchResult();
+      }
+    });
     super.initState();
   }
 
