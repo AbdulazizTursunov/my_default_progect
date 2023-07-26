@@ -20,7 +20,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
     TextEditingController firstNumberController = TextEditingController();
     TextEditingController secondNumberController = TextEditingController();
-    final RegExp _numberRegExp = RegExp(r'^(-)?\d{1,5}$');
 
     return Scaffold(
       appBar: AppBar(
@@ -44,28 +43,25 @@ class _HomeScreenState extends State<HomeScreen> {
 
             ),
             30.ph,
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: TextField(
                   textInputAction: TextInputAction.next,
                   inputFormatters: [
                     FilteringTextInputFormatter.allow(
-                      RegExp(r'^\d{0,5}'),
+                      RegExp(r'^\d{0,6}'),
                     ),
                   ],
                   onChanged: (v){
-                    if(v.length == 5){
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("5 tadan ortiq raqam kirita olmaysiz"),),);
+                    if(v.length == 6){
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("6 tadan ortiq raqam kirita olmaysiz"),),);
                     }
                   },
                   controller: firstNumberController,
                   keyboardType: TextInputType.number,
                   decoration: InputDecoration(
-                    hintText: "first number",
+                    hintText: "first",
                     focusColor: Colors.blue,
-                    filled: true,
-                    fillColor: Colors.white,
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -74,28 +70,27 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   )),
             ),
+
             30.ph,
+
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 20.0),
               child: TextField(
                   inputFormatters: [
                     FilteringTextInputFormatter.allow(
-                      RegExp(r'^\d{0,5}'),
+                      RegExp(r'^\d{0,6}'),
                     ),
                   ],
                   onChanged: (v){
-                    if(v.length == 5){
-                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("5 tadan ortiq raqam kirita olmaysiz"),),);
+                    if(v.length == 6){
+                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text("6 tadan ortiq raqam kirita olmaysiz"),),);
                     }
                   },
                   controller: secondNumberController,
                   keyboardType: TextInputType.number,
                   textInputAction: TextInputAction.done,
                   decoration: InputDecoration(
-                    hintText: 'second number',
-                    focusColor: Colors.blue,
-                    filled: true,
-                    fillColor: Colors.white,
+                    hintText: 'second',
                     focusedBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(10),
                     ),

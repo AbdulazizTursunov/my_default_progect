@@ -116,7 +116,7 @@ final TextEditingController secondController;
                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("maydonlar to'liq qiymatlanmagan")));
                }
              },
-             child:const Center(child:Text("*",style: TextStyle(fontSize: 25),)),
+             child:const Center(child:Text("X",style: TextStyle(fontSize: 20),)),
            ),
     ),
            ] ),
