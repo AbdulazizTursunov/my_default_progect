@@ -1,19 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/adapters.dart';
-import 'package:my_default_progect/data/hive_service/hive_service.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:my_default_progect/ui/country_info/country_info_screen.dart';
+import 'package:my_default_progect/ui/tab_box.dart';
 
-
-// import 'data/hive_service/hive_service.dart';
-import 'data/local/shared-preferences.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-StorageRepository.getInstance();
-
-  Hive.initFlutter;
-  HiveService.openBox();
-  // Hive.registerAdapter(ListModelAdapter());
   runApp(const MyApp());
 
 }
@@ -31,8 +23,18 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-    );
+    Size screenSize = MediaQuery.of(context).size;
+
+    return ScreenUtilInit(
+        designSize: Size(screenSize.width, screenSize.height),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        builder: (BuildContext context, Widget? child) {
+          return  MaterialApp(
+
+            debugShowCheckedModeBanner: false,
+            home:TabBox(),
+          );
+        });
   }
 }
